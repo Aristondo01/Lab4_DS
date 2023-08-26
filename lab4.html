@@ -434,7 +434,7 @@ Palabra más común para etiqueta 1: fire</code></pre>
 <pre><code>El modelo obtuvo una precisión de: 0.8095446584938704</code></pre>
 </div>
 </div>
-<p>Tras toda la limpieza obtuvimos un modelo con un precisión de 0.81 lo cual es un resultado bastante bueno para un modelo que debe procesar y analizar lenguaje&nbsp;natural.</p>
+<p>Tras toda la limpieza obtuvimos un modelo con un precisión de 0.81 lo cual es un resultado bastante bueno para un modelo que debe procesar y analizar lenguaje natural. Pero creemos que el modelo es el que no es el adecuado para este procesamiento por lo que probaremos utilizar Naive Bayes para ver como se adapta&nbsp;el&nbsp;modelo</p>
 <div class="cell" data-execution_count="149">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -488,9 +488,10 @@ weighted avg       0.81      0.81      0.80      2284
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> naive_bayes_classifier.predict(tweet_vec)[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="154">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>tweet <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ingrese un tweet&gt; "</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>prediction <span class="op">=</span> predict(tweet)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El tweet es de un desastre"</span> <span class="cf">if</span> prediction <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> <span class="st">"El tweet no es de un desastre"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tweet = input("Ingrese un tweet&gt; ")</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>tweet <span class="op">=</span> <span class="st">"I like to eat ice cream"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>prediction <span class="op">=</span> predict(tweet)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El tweet es de un desastre"</span> <span class="cf">if</span> prediction <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> <span class="st">"El tweet no es de un desastre"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>El tweet no es de un desastre</code></pre>
 </div>
